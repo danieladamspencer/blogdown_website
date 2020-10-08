@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dan Spencer&#39;s Website</title>
+    <link>/</link>
+    <description>Recent content on Dan Spencer&#39;s Website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 24 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bayesian Random Effects Models</title>
+      <link>/2020/09/24/bayesian-random-effects-models/</link>
+      <pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/09/24/bayesian-random-effects-models/</guid>
+      <description>Consider a scenario in which noisy data are observed, with variance driven by two primary sources: signal and noise. We can write the data generation as
+\[ W_{ij} = X_i + E_{ij}, \quad i = 1,\ldots, n, \quad j = 1,2 \]
+Here, consider \(X_i\) as the signal and \(E_{ij}\) as the noise, with values generated from zero-mean normal distributions.
+\[ X_i \sim \text{Normal}(0,\sigma_x^2), \quad E_{ij} \sim \text{Normal}(0,\sigma_e^2) \]</description>
+    </item>
+    
+    <item>
+      <title>Energy Use in California</title>
+      <link>/2018/03/05/energy-use-in-california/</link>
+      <pubDate>Mon, 05 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/03/05/energy-use-in-california/</guid>
+      <description>The next few posts on this website will be based on emails that I have been sending to the Applied Mathematics and Statistics department every Monday as part of a reminder of the weekly doughnut social event that I help facilitate. In many of those emails, I include a data vizualization with very little explanation. I’ll include more here, like the motivation and the thought process, as well as the code and data source used to make the visualization.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
+      
+      <guid>/about/</guid>
+      <description>I&amp;rsquo;m currently a postdoctoral researcher in the Statistics Department at Indiana University helping to develop Bayesian methods to analyze neuroimaging data under Dr. Amanda Mejia. I graduated from the University of California at Santa Cruz in June 2020 with my dissertation Inference and Uncertainty Quantification for High-Dimensional Tensor Regression with Tensor Decompositions and Bayesian Methods. I am also a Returned Peace Corps Volunteer, having served in Mozambique from 2011-2013. I have lots of interests outside of statistics, including sustainability, running, cycling, and (recently) gardening.</description>
+    </item>
+    
+  </channel>
+</rss>
