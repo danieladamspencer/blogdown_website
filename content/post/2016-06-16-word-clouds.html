@@ -1,0 +1,52 @@
+---
+title: Word Clouds
+author: Dan Spencer
+date: '2016-06-16'
+slug: word-clouds
+categories:
+  - visualizations
+tags: []
+---
+
+
+
+<p>Last summer, I was fortunate to be able to take a two-day short course with <a href="https://users.soe.ucsc.edu/~abel/website/Home/Home.html">Abel Rodriguez</a> here at UCSC. He based the course on the quarter-long <a href="https://courses.soe.ucsc.edu/courses/ams80b/Winter15/01">Art of Data Visualization</a> course that he had taught that winter quarter. It was super interesting, and it motivated me to try a few things on my own, including a word cloud. I use <a href="https://www.google.com/voice">Google Voice</a>, which saves all of my text messages in spreadsheet format. I downloaded the information that I needed, and I set off.</p>
+<p>I decided to make one for the text messages with my wife, and another one for a friend of mine that also took the short course with me. They came out as follows:</p>
+<pre class="r"><code>##### Word cloud fun
+library(XML)
+library(tm)</code></pre>
+<pre><code>## Loading required package: NLP</code></pre>
+<pre class="r"><code>library(wordcloud)</code></pre>
+<pre><code>## Loading required package: RColorBrewer</code></pre>
+<pre class="r"><code>library(RColorBrewer)</code></pre>
+<p><em>Lisa’s word cloud</em></p>
+<pre class="r"><code>Lisa &lt;- read.csv(&quot;~/Downloads/Lisa.csv&quot;) #Note: Replace with your own .csv
+Lisa_df &lt;- data.frame(doc_id = Lisa$timestamp, text = Lisa$message)
+Lisa.corpus &lt;- Corpus(DataframeSource(Lisa_df))
+Lisa.corpus &lt;- tm_map(Lisa.corpus, removePunctuation) # Take out punctuation
+Lisa.corpus &lt;- tm_map(Lisa.corpus, content_transformer(tolower)) # Make everything lower case
+Lisa.corpus &lt;- tm_map(Lisa.corpus, removeWords, stopwords(&quot;english&quot;)) # Get rid of common English words
+Lisa.tdm &lt;- TermDocumentMatrix(Lisa.corpus) # Get the words organized by the documents they appear in
+Lisa.m &lt;- as.matrix(Lisa.tdm)
+Lisa.v &lt;- sort(rowSums(Lisa.m),decreasing=TRUE) # Order the words by frequency
+Lisa.d &lt;- data.frame(word = names(Lisa.v),freq = Lisa.v) # Put it into a data frame including the words themselves
+pal2 &lt;- brewer.pal(8,&quot;Dark2&quot;) # Define the color palette for the plot
+wordcloud(Lisa.d$word,Lisa.d$freq,scale = c(8,.2),
+          min.freq = 3,random.order = FALSE, rot.per = .15, colors = pal2)</code></pre>
+<p><img src="/post/2016-06-16-word-clouds_files/figure-html/Lisa%20Word%20Cloud-1.png" width="672" /></p>
+<p><em>Kurtis’s word cloud</em></p>
+<pre class="r"><code>Kurtis &lt;- read.csv(&quot;~/Downloads/Kurtis.csv&quot;) #Note: Replace with your own .csv
+Kurtis_df &lt;- data.frame(doc_id = Kurtis$timestamp, text = Kurtis$message)
+Kurtis.corpus &lt;- Corpus(DataframeSource(Kurtis_df))
+Kurtis.corpus &lt;- tm_map(Kurtis.corpus, removePunctuation) # Take out punctuation
+Kurtis.corpus &lt;- tm_map(Kurtis.corpus, content_transformer(tolower)) # Make everything lower case
+Kurtis.corpus &lt;- tm_map(Kurtis.corpus, removeWords, stopwords(&quot;english&quot;)) # Get rid of common English words
+Kurtis.tdm &lt;- TermDocumentMatrix(Kurtis.corpus) # Get the words organized by the documents they appear in
+Kurtis.m &lt;- as.matrix(Kurtis.tdm)
+Kurtis.v &lt;- sort(rowSums(Kurtis.m),decreasing=TRUE) # Order the words by frequency
+Kurtis.d &lt;- data.frame(word = names(Kurtis.v),freq = Kurtis.v) # Put it into a data frame including the words themselves
+pal2 &lt;- brewer.pal(8,&quot;Dark2&quot;) # Define the color palette for the plot
+wordcloud(Kurtis.d$word,Kurtis.d$freq,scale = c(8,.2),
+          min.freq = 3,random.order = FALSE, rot.per = .15, colors = pal2)</code></pre>
+<p><img src="/post/2016-06-16-word-clouds_files/figure-html/Kurtis%20Word%20Cloud-1.png" width="672" /></p>
+<p>There’s a bit of a difference between the two, huh?</p>

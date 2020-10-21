@@ -20,31 +20,40 @@ library(wordcloud)
 library(RColorBrewer)
 ```
 
-
-![]({{ site.url }}/img/LisaWordCloud.jpg)
-
 *Lisa's word cloud*
 
-```{r}
+```{r Lisa Word Cloud, message=F,warning=F}
 Lisa <- read.csv("~/Downloads/Lisa.csv") #Note: Replace with your own .csv
-Jo <- Lisa$message
-Jo.corpus <- Corpus(DataframeSource(data.frame(as.character(Jo))))
-Jo.corpus <- tm_map(Jo.corpus, removePunctuation)
-Jo.corpus <- tm_map(Jo.corpus, content_transformer(tolower))
-Jo.corpus <- tm_map(Jo.corpus, removeWords, stopwords("english"))
-Jo.tdm <- TermDocumentMatrix(Jo.corpus)
-Jo.m <- as.matrix(Jo.tdm)
-Jo.v <- sort(rowSums(Jo.m),decreasing=TRUE)
-Jo.d <- data.frame(word = names(Jo.v),freq = Jo.v)
-table(Jo.d$freq)
-pal2 <- brewer.pal(8,"Dark2")
-# windows(width = 12, height = 12)
-wordcloud(Jo.d$word,Jo.d$freq,scale = c(8,.2),min.freq = 3,random.order = FALSE, rot.per = .15, colors = pal2)
+Lisa_df <- data.frame(doc_id = Lisa$timestamp, text = Lisa$message)
+Lisa.corpus <- Corpus(DataframeSource(Lisa_df))
+Lisa.corpus <- tm_map(Lisa.corpus, removePunctuation) # Take out punctuation
+Lisa.corpus <- tm_map(Lisa.corpus, content_transformer(tolower)) # Make everything lower case
+Lisa.corpus <- tm_map(Lisa.corpus, removeWords, stopwords("english")) # Get rid of common English words
+Lisa.tdm <- TermDocumentMatrix(Lisa.corpus) # Get the words organized by the documents they appear in
+Lisa.m <- as.matrix(Lisa.tdm)
+Lisa.v <- sort(rowSums(Lisa.m),decreasing=TRUE) # Order the words by frequency
+Lisa.d <- data.frame(word = names(Lisa.v),freq = Lisa.v) # Put it into a data frame including the words themselves
+pal2 <- brewer.pal(8,"Dark2") # Define the color palette for the plot
+wordcloud(Lisa.d$word,Lisa.d$freq,scale = c(8,.2),
+          min.freq = 3,random.order = FALSE, rot.per = .15, colors = pal2)
 ```
-
-
-![]({{ site.url }}/img/KurtisWordCloud.jpg)
 
 *Kurtis's word cloud*
 
-There's a bit of a difference between the two, huh? The code for this example can be found on [GitHub](https://github.com/danieladamspencer/Code/tree/master/Word%20Cloud).
+```{r Kurtis Word Cloud, message=F,warning=F}
+Kurtis <- read.csv("~/Downloads/Kurtis.csv") #Note: Replace with your own .csv
+Kurtis_df <- data.frame(doc_id = Kurtis$timestamp, text = Kurtis$message)
+Kurtis.corpus <- Corpus(DataframeSource(Kurtis_df))
+Kurtis.corpus <- tm_map(Kurtis.corpus, removePunctuation) # Take out punctuation
+Kurtis.corpus <- tm_map(Kurtis.corpus, content_transformer(tolower)) # Make everything lower case
+Kurtis.corpus <- tm_map(Kurtis.corpus, removeWords, stopwords("english")) # Get rid of common English words
+Kurtis.tdm <- TermDocumentMatrix(Kurtis.corpus) # Get the words organized by the documents they appear in
+Kurtis.m <- as.matrix(Kurtis.tdm)
+Kurtis.v <- sort(rowSums(Kurtis.m),decreasing=TRUE) # Order the words by frequency
+Kurtis.d <- data.frame(word = names(Kurtis.v),freq = Kurtis.v) # Put it into a data frame including the words themselves
+pal2 <- brewer.pal(8,"Dark2") # Define the color palette for the plot
+wordcloud(Kurtis.d$word,Kurtis.d$freq,scale = c(8,.2),
+          min.freq = 3,random.order = FALSE, rot.per = .15, colors = pal2)
+```
+
+There's a bit of a difference between the two, huh? 
