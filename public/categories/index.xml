@@ -6,11 +6,29 @@
     <description>Recent content in Categories on Dan Spencer&#39;s Website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 20 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>COVID-19</title>
+      <link>/categories/covid-19/</link>
+      <pubDate>Mon, 29 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/covid-19/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>probability</title>
+      <link>/categories/probability/</link>
+      <pubDate>Mon, 29 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/probability/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>statistics</title>
       <link>/categories/statistics/</link>
-      <pubDate>Tue, 20 Oct 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>/categories/statistics/</guid>
       <description></description>

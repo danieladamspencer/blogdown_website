@@ -1,0 +1,22 @@
+---
+title: "Bias in Rain Prediction"
+author: "Dan Spencer"
+date: '2021-03-15'
+slug: bias-in-rain-prediction
+categories: statistics
+tags: []
+---
+
+
+
+<p><a href="https://twitter.com/mandyfmejia">Mandy</a> recently gave me a hot take on weather forecasts here in Bloomington that went something like this:</p>
+<ul>
+<li>If the rain forecast for a day says that there is a less than 50% chance of rain, there will be rain</li>
+<li>If the rain forecast for a day gives greater than 80% chance of rain, there will be rain</li>
+<li>A chance of rain between 50% and 80% means there <strong>may</strong> be rain</li>
+</ul>
+<p>I’m all for coming up with systems like this for use when we are planning an outing or get-together (which is obviously more important in this age of only gathering outside), but I want to see if we can reliably</p>
+<div id="grabbing-the-data" class="section level2">
+<h2>Grabbing the data</h2>
+<p>I had to do some clicking around the internet looking for suitable data sources. Several websites allow you to pull up an HTML table version of the historical data one month at a time, but it would be tedious to have to load a new page for every month before scraping the HTML table to produce some usable data. Then I found out that <a href="https://www.ncdc.noaa.gov/cdo-web/">NOAA</a> will allow you to do this for a particular zip code and user-defined level of temporal resolution and reported data. This gave me access to what <strong>actually happened</strong>, but I also wanted access what was <strong>predicted to happen</strong>. As predictions are updated constantly, I thought it might be best to define a prediction as what is predicted to happen two days before a given date. These data were a little trickier to track down.</p>
+</div>
