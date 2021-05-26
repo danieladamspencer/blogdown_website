@@ -48,7 +48,7 @@ We know, from the statements of the sensitivity and specificity above, that the 
   P(\bar{P}|C) & = 1 - 0.907 = 0.093, & P(C) & = 0.8. \\
 \end{align}
 
-What we don't really knonw anything about is the specificity of the PCR test, that is, $P(\bar{P}|\bar{C})$. However, we can get pretty close to finding the probability that the kid in question has COVID with one more assumption: That the outcomes from the tests are independent of each other (**Assumption 4**). This allows us to say that the probability of a positive antigen test **and** a negative PCR test is just their individual probabilities multiplied together. Now we can plug all of that together to find the closest thing we can get to an answer:
+What we don't really know anything about is the specificity of the PCR test, that is, $P(\bar{P}|\bar{C})$. However, we can get pretty close to finding the probability that the kid in question has COVID with one more assumption: That the outcomes from the tests are independent of each other (**Assumption 4**). This allows us to say that the probability of a positive antigen test **and** a negative PCR test is just their individual probabilities multiplied together. Now we can plug all of that together to find the closest thing we can get to an answer:
 
 \begin{align}
 	P(C|A,\bar{P}) & = \frac{P(A \cap \bar{P} | C)P(C)}{P(A \cap \bar{P})} \\
@@ -60,7 +60,7 @@ What we don't really knonw anything about is the specificity of the PCR test, th
 
 And now, for a somewhat suitable answer, we can make this probability a function of a given assumed sensitivity of the PCR test:
 
-```{r COVID_prob}
+```{r COVID prob}
 COVID_probability <- function(specificity) {
   numerator <- 0.8*0.093*0.008
   denominator <- (0.8*0.008 + 0.01*0.992) * (0.093*0.008 + specificity * 0.992)
