@@ -1,0 +1,111 @@
+---
+title: Estimating Negative Variance
+author: Dan Spencer
+date: '2020-10-20'
+slug: estimating-negative-variance
+categories:
+  - statistics
+tags: []
+---
+
+
+
+<p>A few weeks ago, my post-doc adviser, <a href="https://mandymejia.com">Mandy</a>, asked me to examine a scenario. It was a basic random effects model of the form</p>
+<p><span class="math display">\[ W_{ijk} = X_{ik} + E_{ijk}, \quad i = 1,\ldots,n, \quad j = 1,\ldots,J, \quad k = 1,\ldots,K, \]</span></p>
+<p>in which the response for subject <span class="math inline">\(i\)</span> for replicate <span class="math inline">\(j\)</span> and component <span class="math inline">\(k\)</span> (<span class="math inline">\(W_{ijk}\)</span>) is generated through a latent effect (<span class="math inline">\(X_{ik}\)</span>) and some observational noise (<span class="math inline">\(E_{ijk}\)</span>). The model can be applied to neuroimaging in which different unobserved structures or networks have some effect on blood oxygen levels. The main goal is to estimate the variance of the latent effect, and for ease of convention, independent normal random variable distributions are assumed on both the latent effect and the observation noise. That is,</p>
+<p><span class="math display">\[ X_{ik} \overset{i.i.d.}{\sim} \text{Normal}\left(\mu_k, \tau_k^2\right), \quad E_{ijk} \overset{i.i.d.}{\sim} \text{Normal}(0,\sigma^2).\]</span></p>
+<p>The following function can be used to generate data from this model:</p>
+<pre class="r"><code>latent_random_effects_data &lt;- function(n,J,K, mu, tau2, sigma2) {
+  E &lt;- array(rnorm(n*J*K, sd = sqrt(sigma2)), dim = c(n,J,K))
+  X &lt;- sapply(seq(K), function(k) {
+    X_k &lt;- rnorm(n, mean = mu[k], sd = sqrt(tau2[k]))
+    return(X_k)
+  })
+  means &lt;- X %o% array(1,dim = J)
+  W &lt;- aperm(means,perm = c(1,3,2)) + E
+  return(W)
+}</code></pre>
+<p>Mandy told me that there was trouble estimating the latent effect variance (<span class="math inline">\(\tau_k^2\)</span>) in this model because sometimes the estimates would come back negative, which is impossible. I decided to code this up for myself to see, and maybe apply some Bayesian method to fix (see my <a href="/2020/09/24/bayesian-random-effects-models/">previous post</a>). The latent effect variance is estimated through the use of basic variance probability calculations, considered in a simple case when the number of replicates (<span class="math inline">\(J\)</span>) is just 2:</p>
+<p><span class="math display">\[\begin{align*}
+\text{Var}(W_{ijk}) &amp; = \text{Var}(X_{ik} + E_{ijk}) \\
+&amp; = \text{Var}(X_{ik}) + \text{Var}(E_{ijk}) \\
+W_{i1k} - W_{i2k} &amp; = (X_{ik} + E_{i1k}) - (X_{ik} - E_{i2k}) \\
+\text{Var}(W_{i1k} - W_{i2k}) &amp; = 2\text{Var}(X_{ik}) + 2\text{Var}(E_{i1k}) \\
+\text{Var}(X_{ik}) &amp; = \text{Var}(W_{ijk}) - \text{Var}(E_{ijk})
+\end{align*}\]</span></p>
+<p>So how does this end up working out on the generated data model? This will be tested in a scenario with 100 subjects, 2 replicates, and 5 components. The true averages for the components will be <span class="math inline">\(\boldsymbol{\mu} = (\mu_1,\mu_2,\mu_3,\mu_4,\mu_5) = (2,4,6,8,10)\)</span>, the component variances will be set to <span class="math inline">\(\boldsymbol{\tau}^2 = (\tau_1^2,\tau_2^2,\tau_3^2,\tau_4^2,\tau_5^2) = (1,2,3,4,5)\)</span>, and the observation noise variance will be set to <span class="math inline">\(\sigma^2 = 5\)</span>. A boxplot for the data within the components can be seen below.</p>
+<pre class="r"><code>set.seed(47403) # The seed is the zip code for Indiana University
+W &lt;-
+  latent_random_effects_data(
+    n = 100,
+    J = 2,
+    K = 5,
+    mu = seq(2,10,length.out = 5),
+    tau2 = 1:5,
+    sigma2 = 5
+  )
+
+boxplot(apply(W,3,identity), xlab = &quot;Component&quot;, ylab = &quot;Observed Data&quot;,
+        main = &quot;Data summaries within the different components&quot;)</code></pre>
+<p><img src="/post/2020-10-20-estimating-negative-variance_files/figure-html/Generate%20and%20View%20Data-1.png" width="672" /></p>
+<p>The following steps are followed to estimate the variance of the latent components:
+1) Find the variance for each replicate-component pair (<code>rep_component_var</code>)
+2) Find the replicate variance by averaging the replicate-component variances across components (<code>rep_var</code>)
+3) Estimate the noise variance by estimating the variance of the differences between replicates (<code>visit_diff</code>) and finding the variances of the differences across components (<code>noise_var</code>)
+4) Estimate the latent variances by taking the differences between the replicate variances and the noise variances</p>
+<p>The above steps are carried out in R below:</p>
+<pre class="r"><code>rep_component_var &lt;- apply(W,2:3,var)
+rep_var &lt;- apply(rep_component_var,2,mean)
+visit_diff &lt;- W[,1,] - W[,2,]
+noise_var &lt;- apply(visit_diff,2,var) / 2
+latent_var &lt;- rep_var - noise_var
+latent_var</code></pre>
+<pre><code>## [1] -0.103987  0.709116  3.491612  4.451649  3.212830</code></pre>
+<p>The problem is visible in the first component’s variance estimate, which happens to be negative. The true values from the data generation are (1, 2, 3, 4, 5), and the components with higher variances are indeed positive (and somewhat close to their true values). This is something of a paradox: The variance of the sum of two random variables is somehow less than the sum of the individual variances within the first component. One possible solution to this problem is to estimate the component variances using Bayesian estimates, which was outlined using MCMC for a single component in a <a href="/2020/09/24/bayesian-random-effects-models/">previous post</a>. This can be generalized to any number of components for comparison, using the posterior mode to estimate the component variances.</p>
+<pre class="r"><code>source(&quot;basic_bayesian_random_effects.R&quot;)
+latent_effects_mcmc_results &lt;- latent_random_effects_mcmc(
+  W, 
+  variance_priors = &quot;eb_IG&quot;, # Using empirical Bayes inverse gamma priors on the variances
+  hyperparameters = list(prior_means = apply(W,3,mean)) # Using empirical values for mu_k
+  )</code></pre>
+<pre><code>## Starting MCMC
+## MCMC finished, 10000 samples in 10.603 seconds</code></pre>
+<p>For the sake of thoroughness, it’s a good idea to at least examine the trace plots for the latent variances to see if the MCMC converges. As a note, the first 500 samples from the posterior distribution were discarded as a burn-in, even though the initial values were set using the empirical estimates of all parameter values.</p>
+<pre class="r"><code>library(ggplot2)
+tau2_df &lt;- reshape2::melt(latent_effects_mcmc_results$tau2, 
+                          varnames = c(&quot;Component&quot;,&quot;Posterior Draw&quot;), 
+                          value.name = &quot;Variance&quot;)
+tau2_df$Component &lt;- paste(&quot;Component&quot;,tau2_df$Component)
+ggplot(tau2_df) + 
+  geom_line(aes(x = `Posterior Draw`, y = `Variance`)) + 
+  facet_grid(Component~., scales = &quot;free&quot;)</code></pre>
+<p><img src="/post/2020-10-20-estimating-negative-variance_files/figure-html/Plot%20traces-1.png" width="672" /></p>
+<p>These plots look to show values that are consistently in the same area for the posterior draws, which is a good indicator for convergence of the MCMC. Estimating the variances using the modes of the marginal posterior distributions is done below:</p>
+<pre class="r"><code>latent_variance_densities &lt;- apply(latent_effects_mcmc_results$tau2,1,density)
+Bayes_latent_var &lt;- sapply(latent_variance_densities, function(vd_k) {
+  return(vd_k$x[which.max(vd_k$y)])
+})
+Bayes_latent_var</code></pre>
+<pre><code>## [1] 27.61533 16.40985 14.10919 18.24378 25.31000</code></pre>
+<p>There is a good and a bad takeaway here. The good news is that there are no negative variance estimates here, but the bad news is that the estimates are not near the true values. This is interesting, as the means for the latent effects (<span class="math inline">\(\mu_k: \, k = 1,2,3,4,5\)</span>) are all very well-estimated, as is the noise variance. Plots for these parameters can be seen at the bottom, for the curious. It is interesting to note that the two basic estimation methods (Bayesian and frequentist) have such a distinct tradeoff, which opens up questions about modifications to those methods to get the best of both worlds.</p>
+<pre class="r"><code>par(mar = c(5,5,5,1))
+plot(latent_effects_mcmc_results$sigma2, type = &#39;l&#39;, 
+     xlab = &quot;Posterior Draw\n(post burn-in)&quot;,
+     ylab = expression(paste(&quot;Noise Variance &quot;,(sigma^2))),
+     main = &quot;Trace Plot for Observation Variance\n(True Value is 5)&quot;)
+abline(h = 5, col = &#39;white&#39;, lty = 3)</code></pre>
+<p><img src="/post/2020-10-20-estimating-negative-variance_files/figure-html/Plots%20for%20additional%20parameters-1.png" width="672" /></p>
+<pre class="r"><code>trace_mean_effect &lt;- apply(latent_effects_mcmc_results$X,2:3,mean)
+plot(x = as.numeric(summary(seq(ncol(trace_mean_effect)))),
+     y = as.numeric(summary(c(trace_mean_effect))),
+     ylim = c(1,11),
+     type = &#39;n&#39;, xlab = &quot;Posterior Draw\n(post burn-in)&quot;, 
+     ylab = expression(paste(&quot;Mean Random Effect &quot;,(mu[k]))),
+     main = &quot;Trace Plots for the Mean Random Effect\n(True Values Shown in Legend)&quot;)
+lines(trace_mean_effect[1,], col = &#39;red&#39;)
+lines(trace_mean_effect[2,], col = &#39;blue&#39;)
+lines(trace_mean_effect[3,], col = &#39;green&#39;)
+lines(trace_mean_effect[4,], col = &#39;purple&#39;)
+lines(trace_mean_effect[5,], col = &#39;cornflowerblue&#39;)
+legend(&quot;top&quot;, lty = 1, legend = seq(2,10,length.out = 5), col = c(&#39;red&#39;,&#39;blue&#39;,&#39;green&#39;,&#39;purple&#39;,&#39;cornflowerblue&#39;), horiz = T)</code></pre>
+<p><img src="/post/2020-10-20-estimating-negative-variance_files/figure-html/Plots%20for%20additional%20parameters-2.png" width="672" /></p>

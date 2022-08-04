@@ -1,6 +1,6 @@
 baseURL: https://www.dancmdstat.com/
 theme: LoveIt
-title: LoveIt
+title: Dan Spencer
 defaultContentLanguage: en
 languageCode: en
 languageName: English
@@ -61,7 +61,7 @@ params:
     svgFavicon: ''
     themeColor: '#ffffff'
     tileColor: '#da532c'
-    title: LoveIt
+    title: Dan Spencer
   cdn:
     data: jsdelivr.yml
   compatibility:
@@ -86,8 +86,8 @@ params:
     icp: ''
     license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/"
       target="_blank">CC BY-NC 4.0</a>
-    since: 2019
-  gitRepo: https://github.com/dillonzq/LoveIt
+    since: 2022
+  gitRepo: https://github.com/danieladamspencer/blogdown_website
   header:
     desktopMode: fixed
     mobileMode: auto
@@ -107,7 +107,7 @@ params:
       enable: yes
       gravatarEmail: ''
       social: yes
-      subtitle: A Clean, Elegant but Advanced Hugo Theme
+      subtitle: A Bayesian statistician with an interest in neuroimaging
       title: ''
       typeit: yes
     rss: 10
@@ -215,17 +215,17 @@ params:
       images: []
       publisher:
         logoUrl: /images/avatar.png
-        name: xxxx
+        name: Dan Spencer
     share:
       Baidu: no
       Blogger: no
       Buffer: no
       Evernote: no
-      Facebook: yes
+      Facebook: no
       Flipboard: no
       HackerNews: yes
       Instapaper: no
-      Line: yes
+      Line: no
       Linkedin: no
       Mix: no
       Odnoklassniki: no
@@ -237,7 +237,7 @@ params:
       Tumblr: no
       Twitter: yes
       VK: no
-      Weibo: yes
+      Weibo: no
       Whatsapp: no
       Xing: no
       enable: yes
@@ -285,7 +285,7 @@ params:
     Flickr: ''
     Foursquare: ''
     FreeCodeCamp: ''
-    GitHub: ''
+    GitHub: 'danieladamspencer'
     Gitea: ''
     Gitlab: ''
     Goodreads: ''
@@ -329,7 +329,7 @@ params:
     Thingiverse: ''
     Tumblr: ''
     Twitch: ''
-    Twitter: ''
+    Twitter: 'danCMDstat'
     VK: ''
     Vine: ''
     Weibo: ''
@@ -341,7 +341,7 @@ params:
     Youtubecustom: ''
     Youtubelegacy: ''
     Zhihu: ''
-  title: LoveIt
+  title: Dan Spencer
   typeit:
     cursorChar: '|'
     cursorSpeed: 1000
@@ -439,27 +439,20 @@ languages:
           title: ''
           url: /categories/
           weight: 3
-        - identifier: documentation
-          name: Docs
-          post: ''
-          pre: ''
-          title: ''
-          url: /categories/documentation/
-          weight: 4
         - identifier: about
           name: About
           post: ''
           pre: ''
           title: ''
           url: /about/
-          weight: 5
+          weight: 4
         - identifier: github
           name: ''
           post: ''
           pre: <i class='fab fa-github fa-fw' aria-hidden='true'></i>
           title: GitHub
-          url: https://github.com/dillonzq/LoveIt
-          weight: 6
+          url: https://github.com/danieladamspencer
+          weight: 5
     params:
       home:
         profile:
@@ -468,7 +461,7 @@ languages:
           enable: yes
           gravatarEmail: ''
           social: yes
-          subtitle: A Clean, Elegant but Advanced Hugo Theme
+          subtitle: A Bayesian statistician with an interest in neuroimaging
           title: ''
           typeit: yes
         rss: 10
@@ -486,102 +479,8 @@ languages:
         snippetLength: 30
         type: algolia
       social:
-        Email: xxxx@xxxx.com
-        Facebook: xxxx
-        GitHub: xxxx
-        Instagram: xxxx
-        Mastodon:
-          id: '@xxxx'
-          prefix: https://mastodon.technology/
-        Phone: 555-555-555
-        RSS: yes
-        Telegram: xxxx
-        Twitter: xxxx
-        Youtubelegacy: xxxx
+        Email: danieladamspencer@gmail.com
+        GitHub: danieladamspencer
+        Twitter: danCMDstat
     weight: 1
-  zh-cn:
-    copyright: This work is licensed under a Creative Commons Attribution-NonCommercial
-      4.0 International License.
-    hasCJKLanguage: yes
-    languageCode: zh-CN
-    languageName: 简体中文
-    menu:
-      main:
-        - identifier: posts
-          name: 所有文章
-          post: ''
-          pre: ''
-          title: ''
-          url: /posts/
-          weight: 1
-        - identifier: tags
-          name: 标签
-          post: ''
-          pre: ''
-          title: ''
-          url: /tags/
-          weight: 2
-        - identifier: categories
-          name: 分类
-          post: ''
-          pre: ''
-          title: ''
-          url: /categories/
-          weight: 3
-        - identifier: documentation
-          name: 文档
-          pre: ''
-          title: ''
-          url: /categories/documentation/
-          weight: 4
-        - identifier: about
-          name: 关于
-          post: ''
-          pre: ''
-          title: ''
-          url: /about/
-          weight: 5
-        - identifier: github
-          name: ''
-          post: ''
-          pre: <i class='fab fa-github fa-fw' aria-hidden='true'></i>
-          title: GitHub
-          url: https://github.com/dillonzq/LoveIt
-          weight: 6
-    params:
-      home:
-        profile:
-          avatarURL: /images/avatar.png
-          disclaimer: ''
-          enable: yes
-          gravatarEmail: ''
-          social: yes
-          subtitle: 一个简洁、优雅且高效的 Hugo 主题
-          title: ''
-          typeit: yes
-        rss: 10
-      search:
-        absoluteURL: no
-        algolia:
-          appID: PASDMWALPK
-          index: index.zh-cn
-          searchKey: b42948e51daaa93df92381c8e2ac0f93
-        contentLength: 4000
-        enable: yes
-        highlightTag: em
-        maxResultLength: 10
-        placeholder: ''
-        snippetLength: 50
-        type: algolia
-      social:
-        Bilibili: xxxx
-        Devto: xxxx
-        Douban: xxxx
-        Email: xxxx@xxxx.com
-        GitHub: xxxx
-        Phone: 555-555-555
-        RSS: yes
-        Steam: xxxx
-        Weibo: xxxx
-        Zhihu: xxxx
-    weight: 2
+  
