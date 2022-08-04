@@ -33,7 +33,7 @@ Lisa.d &lt;- data.frame(word = names(Lisa.v),freq = Lisa.v) # Put it into a data
 pal2 &lt;- brewer.pal(8,&quot;Dark2&quot;) # Define the color palette for the plot
 wordcloud(Lisa.d$word,Lisa.d$freq,scale = c(8,.2),
           min.freq = 3,random.order = FALSE, rot.per = .15, colors = pal2)</code></pre>
-<p><img src="/post/2016-06-16-word-clouds_files/figure-html/Lisa%20Word%20Cloud-1.png" width="672" /></p>
+<p><img src="/posts/2016-06-16-word-clouds/2016-06-16-word-clouds_files/figure-html/Lisa%20Word%20Cloud-1.png" width="672" /></p>
 <p><em>Kurtis’s word cloud</em></p>
 <pre class="r"><code>Kurtis &lt;- read.csv(&quot;~/Downloads/Kurtis.csv&quot;) #Note: Replace with your own .csv
 Kurtis_df &lt;- data.frame(doc_id = Kurtis$timestamp, text = Kurtis$message)
@@ -48,5 +48,5 @@ Kurtis.d &lt;- data.frame(word = names(Kurtis.v),freq = Kurtis.v) # Put it into 
 pal2 &lt;- brewer.pal(8,&quot;Dark2&quot;) # Define the color palette for the plot
 wordcloud(Kurtis.d$word,Kurtis.d$freq,scale = c(8,.2),
           min.freq = 3,random.order = FALSE, rot.per = .15, colors = pal2)</code></pre>
-<p><img src="/post/2016-06-16-word-clouds_files/figure-html/Kurtis%20Word%20Cloud-1.png" width="672" /></p>
+<p><img src="/posts/2016-06-16-word-clouds/2016-06-16-word-clouds_files/figure-html/Kurtis%20Word%20Cloud-1.png" width="672" /></p>
 <p>There’s a bit of a difference between the two, huh?</p>

@@ -3,6 +3,7 @@ title: "Bayesian COVID Probability"
 author: "Dan Spencer"
 date: '2021-03-29'
 slug: bayesian-covid-probability
+math: true
 categories:
 - statistics
 - probability
@@ -10,10 +11,9 @@ categories:
 tags: []
 ---
 
-<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
 
 
-<p>Last week, I got a call to come pick up my son from his preschool because he was identified as a close contact of someone that tested positive for COVID-19. Obviously, we were worried and trying to figure out how to keep the rest of the family safe. We also were staring down two weeks during which my son would be at home. Then, the next day, we were notified that the student had originally tested positive via an antigen rapid test, but had tested negative using RT-PCR nasal swab test. Since the RT-PCR test is considered to be much more reliable, the school, following the direction of the state and county health officials, reopened. This got me wondering: What is the chance that the kiddo that tested positive actually had COVID-19? Two pieces of information had been observed: a positive antigen test and a negative PCR test. We also heard that they got tested after showing cold-like symptoms (the comes in again later). I’ve done statistics and probability work for over 10 years now, so I figured that I was just as equipped as anyone else to try and figure this out. First, I had to find all of the information that I could about these tests and how accurate they are and then set up any assumptions that I’m making for the calculation. First, I’m going to use <a href="https://www.coronavirus.in.gov/2393.htm">the positivity rate for Monroe county</a> from March 15 through March 21, 2021 (0.8%) as the baseline probability of a person having the SARS-cov-2 coronavirus in their system (<strong>Assumption 1</strong>). This is probably wrong, but it’s the best I can come up with on short notice. Then I started looking up the <em>sensitivity</em> (true positive rate) and <em>specificity</em> (true negative rate) for both the antigen tests and the PCR test. Since the study of the virus and the tests that have been developed are only about a year old, there really isn’t too much that we can be super sure of. The <a href="https://www.cdc.gov/mmwr/volumes/69/wr/mm695152a3.htm">CDC</a> estimates that</p>
+<p>Last week, I got a call to come pick up my son from his preschool because he was identified as a close contact of someone that tested positive for COVID-19. Obviously, we were worried and trying to figure out how to keep the rest of the family safe. We also were staring down two weeks during which my son would be at home. Then, the next day, we were notified that the student had originally tested positive via an antigen rapid test, but had tested negative using RT-PCR nasal swab test. Since the RT-PCR test is considered to be much more reliable, the school, following the direction of the state and county health officials, reopened. This got me wondering: What is the chance that the kiddo that tested positive actually had COVID-19? Two pieces of information had been observed: a positive antigen test and a negative PCR test. We also heard that they got tested after showing cold-like symptoms (the comes in again later). I’ve done statistics and probability work for over 10 years now, so I figured that I was just as equipped as anyone else to try and figure this out. First, I had to find all of the information that I could about these tests and how accurate they are and then set up any assumptions that I’m making for the calculation. First, I’m going to use <a href="https://www.coronavirus.in.gov/2393.htm">the positivity rate for Monroe county</a> from March 15 through March 21, 2021 (0.8%) as the baseline probability of a person having the SARS-COV-2 coronavirus in their system (<strong>Assumption 1</strong>). This is probably wrong, but it’s the best I can come up with on short notice. Then I started looking up the <em>sensitivity</em> (true positive rate) and <em>specificity</em> (true negative rate) for both the antigen tests and the PCR test. Since the study of the virus and the tests that have been developed are only about a year old, there really isn’t too much that we can be super sure of. The <a href="https://www.cdc.gov/mmwr/volumes/69/wr/mm695152a3.htm">CDC</a> estimates that</p>
 <blockquote>
 <p>Compared with real-time reverse transcription–polymerase chain reaction (RT-PCR) testing,
 the Sofia antigen test had a sensitivity of 80.0% and specificity of 98.9% among
@@ -27,9 +27,7 @@ when used for screening of asymptomatic persons.</p>
 <div id="probability-time" class="section level2">
 <h2>Probability Time</h2>
 <p>Now I can use some Bayes’ theorem and probability assumptions to at least estimate the quantity that I want to know: What is the probability that someone who tests positive with an antigen test and negative with a PCR test will actually have COVID? We can use Bayes’ theorem to find this probability, held up by the shaky scaffolding of my assumptions. Here’s a quick review on Bayes’ theorem to get everyone up to speed: The probability of an event given observed data is equal to the probability of observing the data given that the event happened times the “prior” probability that the event happens divided by the probability that the observed data happen, independent of the event in question. Or, in math:</p>
-<p><span class="math display">\[\begin{align}
-  P(event|data) = \frac{P(data|event)P(event)}{P(data)}
-\end{align}\]</span></p>
+<p><span class="math display">\[P(event|data) = \frac{P(data|event)P(event)}{P(data)}\]</span></p>
 <p>Now I’m going to simplify the notation a little bit and represent the even that someone has COVID with the letter <span class="math inline">\(C\)</span>. The data that are observed are represented with the letter <span class="math inline">\(D\)</span>. I can break the data into the two test observations: <span class="math inline">\(A\)</span> represents a positive antigen test and <span class="math inline">\(P\)</span> represents a positive PCR test. Overlining one of these letters means the complement to an event, i.e. <span class="math inline">\(\bar{A}\)</span> represents a negative antigen test. Now I can rewrite Bayes’ theorem above as</p>
 <p><span class="math display">\[\begin{align}
   P(C|D) &amp; = \frac{P(D|C)P(C)}{P(D)},
@@ -49,7 +47,7 @@ when used for screening of asymptomatic persons.</p>
     &amp; = \frac{P(A|C) P(\bar{P}|C)P(C)}{P(A)P(\bar{P})} \\
     &amp; = \frac{0.8 \times 0.093 \times 0.008}{(P(A \cap C) + P(A \cap \bar{C})) \times (P(\bar{P} \cap C) + P(\bar{P} \cap \bar{C}))} \\
     &amp; = \frac{0.8 \times 0.093 \times 0.008}{(P(A | C) P(C) + P(A | \bar{C}) P(\bar{C})) \times (P(\bar{P}|C) P(C) + P(\bar{P}|\bar{C}) P(\bar{C}))} \\
-    &amp; = \frac{0.8 \times 0.093 \times 0.008}{(0.8\times 0.008 + 0.01 \times 0.992) \times (0.093 \times 0.008 + P(\bar{P}|\bar{C}) \times 0.992)} 
+    &amp; = \frac{0.8 \times 0.093 \times 0.008}{(0.8\times 0.008 + 0.01 \times 0.992) \times (0.093 \times 0.008 + P(\bar{P}|\bar{C}) \times 0.992)}
 \end{align}\]</span></p>
 <p>And now, for a somewhat suitable answer, we can make this probability a function of a given assumed sensitivity of the PCR test:</p>
 <pre class="r"><code>COVID_probability &lt;- function(specificity) {

@@ -47,7 +47,7 @@ W &lt;-
 
 boxplot(apply(W,3,identity), xlab = &quot;Component&quot;, ylab = &quot;Observed Data&quot;,
         main = &quot;Data summaries within the different components&quot;)</code></pre>
-<p><img src="/post/2020-10-20-estimating-negative-variance_files/figure-html/Generate%20and%20View%20Data-1.png" width="672" /></p>
+<p><img src="/posts/2020-10-20-estimating-negative-variance/2020-10-20-estimating-negative-variance_files/figure-html/Generate%20and%20View%20Data-1.png" width="672" /></p>
 <p>The following steps are followed to estimate the variance of the latent components:
 1) Find the variance for each replicate-component pair (<code>rep_component_var</code>)
 2) Find the replicate variance by averaging the replicate-component variances across components (<code>rep_var</code>)
@@ -69,7 +69,7 @@ latent_effects_mcmc_results &lt;- latent_random_effects_mcmc(
   hyperparameters = list(prior_means = apply(W,3,mean)) # Using empirical values for mu_k
   )</code></pre>
 <pre><code>## Starting MCMC
-## MCMC finished, 10000 samples in 10.603 seconds</code></pre>
+## MCMC finished, 10000 samples in 11.504 seconds</code></pre>
 <p>For the sake of thoroughness, it’s a good idea to at least examine the trace plots for the latent variances to see if the MCMC converges. As a note, the first 500 samples from the posterior distribution were discarded as a burn-in, even though the initial values were set using the empirical estimates of all parameter values.</p>
 <pre class="r"><code>library(ggplot2)
 tau2_df &lt;- reshape2::melt(latent_effects_mcmc_results$tau2, 
@@ -79,7 +79,7 @@ tau2_df$Component &lt;- paste(&quot;Component&quot;,tau2_df$Component)
 ggplot(tau2_df) + 
   geom_line(aes(x = `Posterior Draw`, y = `Variance`)) + 
   facet_grid(Component~., scales = &quot;free&quot;)</code></pre>
-<p><img src="/post/2020-10-20-estimating-negative-variance_files/figure-html/Plot%20traces-1.png" width="672" /></p>
+<p><img src="/posts/2020-10-20-estimating-negative-variance/2020-10-20-estimating-negative-variance_files/figure-html/Plot%20traces-1.png" width="672" /></p>
 <p>These plots look to show values that are consistently in the same area for the posterior draws, which is a good indicator for convergence of the MCMC. Estimating the variances using the modes of the marginal posterior distributions is done below:</p>
 <pre class="r"><code>latent_variance_densities &lt;- apply(latent_effects_mcmc_results$tau2,1,density)
 Bayes_latent_var &lt;- sapply(latent_variance_densities, function(vd_k) {
@@ -94,7 +94,7 @@ plot(latent_effects_mcmc_results$sigma2, type = &#39;l&#39;,
      ylab = expression(paste(&quot;Noise Variance &quot;,(sigma^2))),
      main = &quot;Trace Plot for Observation Variance\n(True Value is 5)&quot;)
 abline(h = 5, col = &#39;white&#39;, lty = 3)</code></pre>
-<p><img src="/post/2020-10-20-estimating-negative-variance_files/figure-html/Plots%20for%20additional%20parameters-1.png" width="672" /></p>
+<p><img src="/posts/2020-10-20-estimating-negative-variance/2020-10-20-estimating-negative-variance_files/figure-html/Plots%20for%20additional%20parameters-1.png" width="672" /></p>
 <pre class="r"><code>trace_mean_effect &lt;- apply(latent_effects_mcmc_results$X,2:3,mean)
 plot(x = as.numeric(summary(seq(ncol(trace_mean_effect)))),
      y = as.numeric(summary(c(trace_mean_effect))),
@@ -108,4 +108,4 @@ lines(trace_mean_effect[3,], col = &#39;green&#39;)
 lines(trace_mean_effect[4,], col = &#39;purple&#39;)
 lines(trace_mean_effect[5,], col = &#39;cornflowerblue&#39;)
 legend(&quot;top&quot;, lty = 1, legend = seq(2,10,length.out = 5), col = c(&#39;red&#39;,&#39;blue&#39;,&#39;green&#39;,&#39;purple&#39;,&#39;cornflowerblue&#39;), horiz = T)</code></pre>
-<p><img src="/post/2020-10-20-estimating-negative-variance_files/figure-html/Plots%20for%20additional%20parameters-2.png" width="672" /></p>
+<p><img src="/posts/2020-10-20-estimating-negative-variance/2020-10-20-estimating-negative-variance_files/figure-html/Plots%20for%20additional%20parameters-2.png" width="672" /></p>
