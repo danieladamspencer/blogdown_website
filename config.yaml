@@ -16,9 +16,9 @@ ignoreErrors:
   - error-missing-instagram-accesstoken
 ignoreFiles: ["\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
 author:
-  email: ''
+  email: 'danieladamspencer@gmail.com'
   link: ''
-  name: xxxx
+  name: Daniel Spencer
 menu:
   main:
     - identifier: posts
@@ -93,9 +93,9 @@ params:
     mobileMode: auto
     title:
       logo: ''
-      name: LoveIt
+      name: Home
       post: ''
-      pre: <i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i>
+      pre: <i class='fa-solid fa-sigma'></i>
       typeit: no
   home:
     posts:
