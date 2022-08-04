@@ -16,7 +16,7 @@ The next few posts on this website will be based on emails that I have been send
 
 Having lived in coastal California for about 3.5 years now, I've grown used to a social climate that favors sustainability. Many homeowners here invest in solar energy, and I think many try to cut back on their electricity usage as much as they can. I was surprised to find that the electricity usage data is posted online by the [California Energy Commission](http://ecdms.energy.ca.gov/elecbycounty.aspx). However, this dataset only gives the pure energy usage in gigawatt hours. Comparing the raw energy usage in, say, Los Angeles county to one of the counties in the eastern Sierra region does not make sense. Therefore, I decided to try to calculate the usage **per 1,000 people** using information from the [California Department of Finance](http://www.dof.ca.gov/Forecasting/Demographics/Estimates/E-1/). The code and the final plot can be seen below: 
 
-```{r}
+```{r,message=FALSE}
 library(tidyverse)
 library(readxl)
 library(magrittr)
