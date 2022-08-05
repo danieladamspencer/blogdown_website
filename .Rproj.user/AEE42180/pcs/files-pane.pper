@@ -2,8 +2,8 @@
     "sortOrder": [
         {
             "columnIndex": 2,
-            "ascending": true
+            "ascending": false
         }
     ],
-    "path": "~/github/blogdown_website/layouts/shortcodes/blogdown"
+    "path": "~/github/blogdown_website/content/about"
 }

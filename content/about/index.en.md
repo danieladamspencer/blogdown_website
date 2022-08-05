@@ -12,9 +12,9 @@ title: About Dan Spencer
 
 # Works in Progress
 
-**Spencer, D.**, Bolin, D., Nebel, M. B., & Mejia, A. (expected 2022). Fast Bayesian estimation of brain activation with cortical surface and subcortical fMRI data using EM. arXiv preprint arXiv:2203.00053.
+**Spencer, D.**, Bolin, D., Nebel, M. B., & Mejia, A. Fast Bayesian estimation of brain activation with cortical surface and subcortical fMRI data using EM. arXiv preprint arXiv:2203.00053.
 
-**Spencer, D**, Shinohara, R., Guhaniyogi, R., Prado, R. (expected 2022). Parsimonious Bayesian sparse tensor regression using the Tucker decomposition. arXiv preprint arXiv:2203.04733
+**Spencer, D**, Shinohara, R., Guhaniyogi, R., Prado, R. Parsimonious Bayesian sparse tensor regression using the Tucker decomposition. arXiv preprint arXiv:2203.04733
 
 # Publications
 
