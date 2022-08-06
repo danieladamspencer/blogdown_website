@@ -24,8 +24,22 @@ Guhaniyogi, R., & **Spencer, D.** (2021). Bayesian tensor response regression wi
 
 **Spencer, D.**, Guhaniyogi, R., & Prado, R. (2020). Joint Bayesian estimation of voxel activation and inter-regional connectivity in fMRI experiments. Psychometrika, 85(4), 845-869.
 
+# Awards and Honors
+
+Poster Award, Junior International Society for Bayesian Analysis Category - *Fast Bayesian estimation of brain activation with cortical surface and subcortical fMRI data using EM* - ISBA World Meeting - June 2022
+
+Finalist, 2020 Savage Dissertation Award in Applied Methodology, International Society of Bayesian Analysis - *Inference and Uncertainty Quantification for High-dimensional Tensor Regression with Tensor Decompositions and Bayesian Methods*
+
+Student Poster Award - *Bayesian Mixed Effect Sparse Tensor Response Regression Model with Joint Estimation of Activation and Connectivity* - Statistical Methods in Imaging - June 2019
 
 # Conference Presentations
+
+*Fast Bayesian estimation of brain activation with cortical surface and subcortical fMRI data using EM*, World Meeting of the International Society of Bayesian Analysis, Montreal, Quebec, Canada, June 2022.
+**Winner of a Poster Award**
+
+*Analyzing task-fMRI the Bayesian way*, Statistical Methods in Imaging, Vanderbilt University, Nashville, TN, May 2022
+
+*Inference and Uncertainty Quantification for High-dimensional Tensor Regression with Tensor Decompositions and Bayesian Methods*, World Meeting of the International Society of Bayesian Analysis, Virtual, June 2021.
 
 *Bayesian Mixed Effect Sparse Tensor Response Regression Model with Joint Estimation of Activation and Connectivity*, Statistical Methods in Imaging Conference, Department of Statistics, University of California, Irvine, Irvine, CA, June 2019. **Winner of a Student Award**
 
@@ -38,17 +52,19 @@ UC Santa Cruz, Santa Cruz, CA, April 2016
 # Education
 
 **Ph.D. Statistical Science, UC Santa Cruz**, Department of Applied Math and Statistics, 
-Degree earned June 2020 -  3.82/4.00 GPA
+Degree earned June 2020 
 
 Dissertation:
 
 Spencer, D. (2020). Inference and uncertainty quantification for high-dimensional tensor regression with tensor decompositions and Bayesian methods. University of California, Santa Cruz.
 
+*Finalist for the 2020 Savage Award in Applied Methodology*
+
 **Master’s in Applied Statistics, Penn State University**, Department of Statistics,
-Degree earned August 2010 - 3.90/4.00 GPA 
+Degree earned August 2010 
 
 **B.S. Mathematics, Economics minor, Penn State University**, August 2009
-Degree earned August 2009 - 3.52/4.00 GPA
+Degree earned August 2009 
 
 # Professional Experience
 
