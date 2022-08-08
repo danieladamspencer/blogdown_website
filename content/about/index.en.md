@@ -26,11 +26,13 @@ Guhaniyogi, R., & **Spencer, D.** (2021). Bayesian tensor response regression wi
 
 # Awards and Honors
 
-Poster Award, Junior International Society for Bayesian Analysis Category - *Fast Bayesian estimation of brain activation with cortical surface and subcortical fMRI data using EM* - ISBA World Meeting - June 2022
+**Poster Award**, Junior International Society for Bayesian Analysis Category - *Fast Bayesian estimation of brain activation with cortical surface and subcortical fMRI data using EM* - ISBA World Meeting - June 2022
 
-Finalist, 2020 Savage Dissertation Award in Applied Methodology, International Society of Bayesian Analysis - *Inference and Uncertainty Quantification for High-dimensional Tensor Regression with Tensor Decompositions and Bayesian Methods*
+**Featured Poster** - *Surface-based spatial Bayesian GLM produces reliable task activations in individuals and groups* -  Organization for Human Brain Mapping World Meeting - June 2021
 
-Student Poster Award - *Bayesian Mixed Effect Sparse Tensor Response Regression Model with Joint Estimation of Activation and Connectivity* - Statistical Methods in Imaging - June 2019
+**Finalist**, 2020 Savage Dissertation Award in Applied Methodology, International Society of Bayesian Analysis - *Inference and Uncertainty Quantification for High-dimensional Tensor Regression with Tensor Decompositions and Bayesian Methods*
+
+**Student Poster Award** - *Bayesian Mixed Effect Sparse Tensor Response Regression Model with Joint Estimation of Activation and Connectivity* - Statistical Methods in Imaging - June 2019
 
 # Conference Presentations
 
@@ -39,7 +41,11 @@ Student Poster Award - *Bayesian Mixed Effect Sparse Tensor Response Regression 
 
 *Analyzing task-fMRI the Bayesian way*, Statistical Methods in Imaging, Vanderbilt University, Nashville, TN, May 2022
 
+*Surface-based Bayesian General Linear Model: An EM Approach*, CM Statistics Conference, King's College London, London, UK, December 2021.
+
 *Inference and Uncertainty Quantification for High-dimensional Tensor Regression with Tensor Decompositions and Bayesian Methods*, World Meeting of the International Society of Bayesian Analysis, Virtual, June 2021.
+
+*Surface-based spatial Bayesian GLM produces reliable task activations in individuals and groups*, Organization for Human Brain Mapping World Meeting, June 2021. **Featured Poster**
 
 *Bayesian Mixed Effect Sparse Tensor Response Regression Model with Joint Estimation of Activation and Connectivity*, Statistical Methods in Imaging Conference, Department of Statistics, University of California, Irvine, Irvine, CA, June 2019. **Winner of a Student Award**
 
