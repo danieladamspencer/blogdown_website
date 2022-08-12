@@ -49,7 +49,7 @@ when used for screening of asymptomatic persons.</p>
     &amp; = \frac{0.8 \times 0.093 \times 0.008}{(P(A | C) P(C) + P(A | \bar{C}) P(\bar{C})) \times (P(\bar{P}|C) P(C) + P(\bar{P}|\bar{C}) P(\bar{C}))} \\
     &amp; = \frac{0.8 \times 0.093 \times 0.008}{(0.8\times 0.008 + 0.01 \times 0.992) \times (0.093 \times 0.008 + P(\bar{P}|\bar{C}) \times 0.992)}
 \end{align}\]</span></p>
-<p>And now, for a somewhat suitable answer, we can make this probability a function of a given assumed sensitivity of the PCR test:</p>
+<p>And now, for a somewhat suitable answer, we can make this probability a function of a given assumed specificity of the PCR test:</p>
 <pre class="r"><code>COVID_probability &lt;- function(specificity) {
   numerator &lt;- 0.8*0.093*0.008
   denominator &lt;- (0.8*0.008 + 0.01*0.992) * (0.093*0.008 + specificity * 0.992)

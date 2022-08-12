@@ -57,7 +57,7 @@ What we don't really know anything about is the specificity of the PCR test, tha
 	& = \frac{0.8 \times 0.093 \times 0.008}{(0.8\times 0.008 + 0.01 \times 0.992) \times (0.093 \times 0.008 + P(\bar{P}|\bar{C}) \times 0.992)} 
 \end{align}
 
-And now, for a somewhat suitable answer, we can make this probability a function of a given assumed sensitivity of the PCR test:
+And now, for a somewhat suitable answer, we can make this probability a function of a given assumed specificity of the PCR test:
 
 ```{r COVID prob}
 COVID_probability <- function(specificity) {
