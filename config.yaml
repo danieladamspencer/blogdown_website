@@ -425,20 +425,27 @@ languages:
           title: ''
           url: /categories/
           weight: 2
+        - identifier: software
+          name: Software
+          post: ''
+          pre: ''
+          title: ''
+          url: /software/
+          weight: 3
         - identifier: about
           name: About
           post: ''
           pre: ''
           title: ''
           url: /about/
-          weight: 3
+          weight: 4
         - identifier: github
           name: ''
           post: ''
           pre: <i class='fab fa-github fa-fw' aria-hidden='true'></i>
           title: GitHub
           url: https://github.com/danieladamspencer
-          weight: 4
+          weight: 5
     params:
       home:
         profile:
