@@ -10,11 +10,22 @@ math:
 title: About Dan Spencer
 ---
 
-# Works in Progress
+# Education
 
-**Spencer, D.**, Bolin, D., Nebel, M. B., & Mejia, A. Fast Bayesian estimation of brain activation with cortical surface and subcortical fMRI data using EM. arXiv preprint arXiv:2203.00053.
+**Ph.D. Statistical Science, UC Santa Cruz**, Department of Applied Math and Statistics, 
+Degree earned June 2020 
 
-**Spencer, D**, Shinohara, R., Guhaniyogi, R., Prado, R. Parsimonious Bayesian sparse tensor regression using the Tucker decomposition. arXiv preprint arXiv:2203.04733
+Dissertation:
+
+Spencer, D. (2020). Inference and uncertainty quantification for high-dimensional tensor regression with tensor decompositions and Bayesian methods. University of California, Santa Cruz.
+
+*Finalist for the 2020 Savage Award in Applied Methodology*
+
+**Master’s in Applied Statistics, Penn State University**, Department of Statistics,
+Degree earned August 2010 
+
+**B.S. Mathematics, Economics minor, Penn State University**, August 2009
+Degree earned August 2009 
 
 # Publications
 
@@ -23,6 +34,12 @@ title: About Dan Spencer
 Guhaniyogi, R., & **Spencer, D.** (2021). Bayesian tensor response regression with an application to brain activation studies. Bayesian Analysis, 16(4), 1221-1249.
 
 **Spencer, D.**, Guhaniyogi, R., & Prado, R. (2020). Joint Bayesian estimation of voxel activation and inter-regional connectivity in fMRI experiments. Psychometrika, 85(4), 845-869.
+
+# Works in Progress
+
+**Spencer, D.**, Bolin, D., Nebel, M. B., & Mejia, A. Fast Bayesian estimation of brain activation with cortical surface and subcortical fMRI data using EM. arXiv preprint arXiv:2203.00053.
+
+**Spencer, D**, Shinohara, R., Guhaniyogi, R., Prado, R. Parsimonious Bayesian sparse tensor regression using the Tucker decomposition. arXiv preprint arXiv:2203.04733
 
 # Awards and Honors
 
@@ -35,6 +52,8 @@ Guhaniyogi, R., & **Spencer, D.** (2021). Bayesian tensor response regression wi
 **Student Poster Award** - *Bayesian Mixed Effect Sparse Tensor Response Regression Model with Joint Estimation of Activation and Connectivity* - Statistical Methods in Imaging - June 2019
 
 # Conference Presentations
+
+*Structural differences in Alzheimer’s Disease using Bayesian Tensor Regression*, Joint Statistical Meeting, Washington, DC, August 2022.
 
 *Fast Bayesian estimation of brain activation with cortical surface and subcortical fMRI data using EM*, World Meeting of the International Society of Bayesian Analysis, Montreal, Quebec, Canada, June 2022.
 **Winner of a Poster Award**
@@ -55,22 +74,7 @@ Guhaniyogi, R., & **Spencer, D.** (2021). Bayesian tensor response regression wi
 UC Santa Cruz, Santa Cruz, CA, April 2016
 
 
-# Education
 
-**Ph.D. Statistical Science, UC Santa Cruz**, Department of Applied Math and Statistics, 
-Degree earned June 2020 
-
-Dissertation:
-
-Spencer, D. (2020). Inference and uncertainty quantification for high-dimensional tensor regression with tensor decompositions and Bayesian methods. University of California, Santa Cruz.
-
-*Finalist for the 2020 Savage Award in Applied Methodology*
-
-**Master’s in Applied Statistics, Penn State University**, Department of Statistics,
-Degree earned August 2010 
-
-**B.S. Mathematics, Economics minor, Penn State University**, August 2009
-Degree earned August 2009 
 
 # Professional Experience
 

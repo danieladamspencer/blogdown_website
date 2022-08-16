@@ -1,6 +1,6 @@
 ---
 title: Bayesian Random Effects Models
-author: "Dan"
+author: "Dan Spencer"
 date: '2020-09-24'
 slug: bayesian-random-effects-models
 categories: []
@@ -63,7 +63,7 @@ mcmc_function &lt;- function(W, S = 10000, a_sigma_e = 0.1, b_sigma_e = 1,
   return(mcmc_results)
 }
 mcmc_results &lt;- mcmc_function(W)</code></pre>
-<pre><code>## Total MCMC run time: 10000 draws in 1.887 seconds</code></pre>
+<pre><code>## Total MCMC run time: 10000 draws in 2.076 seconds</code></pre>
 <p>It’s always a good idea to see how the draws from the posterior distribution vary over the draws that are made, as there can be a problem if there is too much dependence between one draw and the next. These types of plots are referred to as <em>trace plots</em>.</p>
 <pre class="r"><code>par(mfrow=c(2,1), mar = c(5,5,1,1))
 plot(mcmc_results$sigma2_e, type=&#39;l&#39;, main = &quot;&quot;, ylab = expression(sigma[e]^2), xlab = &quot;Iteration&quot;)
@@ -86,7 +86,7 @@ X &lt;- rnorm(n,sd = sqrt(sigma2_x_true))
 W &lt;- cbind(X,X) + E
 
 mcmc_results2 &lt;- mcmc_function(W)</code></pre>
-<pre><code>## Total MCMC run time: 10000 draws in 2.097 seconds</code></pre>
+<pre><code>## Total MCMC run time: 10000 draws in 2.079 seconds</code></pre>
 <pre class="r"><code>par(mfrow=c(1,2))
 plot(density(mcmc_results2$sigma2_e), main = &quot;&quot;, xlab = expression(sigma[e]^2))
 abline(v = sigma2_e_true, col = &#39;red&#39;)
@@ -103,7 +103,7 @@ X &lt;- rnorm(n,sd = sqrt(sigma2_x_true))
 W &lt;- cbind(X,X) + E
 
 mcmc_results3 &lt;- mcmc_function(W)</code></pre>
-<pre><code>## Total MCMC run time: 10000 draws in 13.431 seconds</code></pre>
+<pre><code>## Total MCMC run time: 10000 draws in 14.356 seconds</code></pre>
 <pre class="r"><code>par(mfrow=c(1,2))
 plot(density(mcmc_results3$sigma2_e), main = &quot;&quot;, xlab = expression(sigma[e]^2))
 abline(v = sigma2_e_true, col = &#39;red&#39;)
@@ -120,7 +120,7 @@ X &lt;- rnorm(n,sd = sqrt(sigma2_x_true))
 W &lt;- cbind(X,X) + E
 
 mcmc_results4 &lt;- mcmc_function(W, a_sigma_e = 2, b_sigma_e = 2, a_sigma_x = 2, b_sigma_x = 200)</code></pre>
-<pre><code>## Total MCMC run time: 10000 draws in 1.996 seconds</code></pre>
+<pre><code>## Total MCMC run time: 10000 draws in 2.05 seconds</code></pre>
 <pre class="r"><code>par(mfrow=c(1,2))
 plot(density(mcmc_results4$sigma2_e), main = &quot;&quot;, xlab = expression(sigma[e]^2))
 abline(v = sigma2_e_true, col = &#39;red&#39;)
@@ -137,7 +137,7 @@ X &lt;- rnorm(n,sd = sqrt(sigma2_x_true))
 W &lt;- cbind(X,X) + E
 
 mcmc_results5 &lt;- mcmc_function(W, a_sigma_e = 2, b_sigma_e = 2, a_sigma_x = 2, b_sigma_x = 200)</code></pre>
-<pre><code>## Total MCMC run time: 10000 draws in 13.688 seconds</code></pre>
+<pre><code>## Total MCMC run time: 10000 draws in 14.304 seconds</code></pre>
 <pre class="r"><code>par(mfrow=c(1,2))
 plot(density(mcmc_results5$sigma2_e), main = &quot;&quot;, xlab = expression(sigma[e]^2))
 abline(v = sigma2_e_true, col = &#39;red&#39;)
@@ -154,7 +154,7 @@ X &lt;- rnorm(n,sd = sqrt(sigma2_x_true))
 W &lt;- cbind(X,X) + E
 
 mcmc_results6 &lt;- mcmc_function(W, a_sigma_e = 2, b_sigma_e = 200, a_sigma_x = 2, b_sigma_x = 2)</code></pre>
-<pre><code>## Total MCMC run time: 10000 draws in 2.303 seconds</code></pre>
+<pre><code>## Total MCMC run time: 10000 draws in 2.039 seconds</code></pre>
 <pre class="r"><code>par(mfrow=c(1,2))
 plot(density(mcmc_results6$sigma2_e), main = &quot;&quot;, xlab = expression(sigma[e]^2))
 abline(v = sigma2_e_true, col = &#39;red&#39;)
@@ -171,7 +171,7 @@ X &lt;- rnorm(n,mean = 50, sd = sqrt(sigma2_x_true))
 W &lt;- cbind(X,X) + E
 
 mcmc_results7 &lt;- mcmc_function(W, a_sigma_e = 2, b_sigma_e = 200, a_sigma_x = 2, b_sigma_x = 2)</code></pre>
-<pre><code>## Total MCMC run time: 10000 draws in 1.998 seconds</code></pre>
+<pre><code>## Total MCMC run time: 10000 draws in 2.009 seconds</code></pre>
 <pre class="r"><code>par(mfrow=c(1,2))
 plot(density(mcmc_results7$sigma2_e), main = &quot;&quot;, xlab = expression(sigma[e]^2))
 abline(v = sigma2_e_true, col = &#39;red&#39;)
@@ -188,7 +188,7 @@ X &lt;- rnorm(n,mean = 1000, sd = sqrt(sigma2_x_true))
 W &lt;- cbind(X,X) + E
 
 mcmc_results8 &lt;- mcmc_function(W, a_sigma_e = 2, b_sigma_e = 200, a_sigma_x = 2, b_sigma_x = 2)</code></pre>
-<pre><code>## Total MCMC run time: 10000 draws in 1.983 seconds</code></pre>
+<pre><code>## Total MCMC run time: 10000 draws in 2.033 seconds</code></pre>
 <pre class="r"><code>par(mfrow=c(1,2))
 plot(density(mcmc_results8$sigma2_e), main = &quot;&quot;, xlab = expression(sigma[e]^2))
 abline(v = sigma2_e_true, col = &#39;red&#39;)

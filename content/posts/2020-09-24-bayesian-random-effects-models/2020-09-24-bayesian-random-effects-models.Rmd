@@ -1,6 +1,6 @@
 ---
 title: Bayesian Random Effects Models
-author: "Dan"
+author: "Dan Spencer"
 date: '2020-09-24'
 slug: bayesian-random-effects-models
 categories: []
