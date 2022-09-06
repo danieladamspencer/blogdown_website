@@ -73,8 +73,9 @@ Guhaniyogi, R., & **Spencer, D.** (2021). Bayesian tensor response regression wi
 *Bayesian Tensor Regression*, AMS/CAFIN Workshop, 
 UC Santa Cruz, Santa Cruz, CA, April 2016
 
+# Service
 
-
+**Organizer** - Statistics in Imaging Working Group. A monthly meeting to present and share work and connect with others in the statistical imaging community.
 
 # Professional Experience
 
