@@ -24,7 +24,7 @@ Spencer, D. (2020). Inference and uncertainty quantification for high-dimensiona
 **Master’s in Applied Statistics, Penn State University**, Department of Statistics,
 Degree earned August 2010 
 
-**B.S. Mathematics, Economics minor, Penn State University**, August 2009
+**B.S. Mathematics, Economics minor, Penn State University**, 
 Degree earned August 2009 
 
 # Publications
