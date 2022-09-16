@@ -35,11 +35,13 @@ Guhaniyogi, R., & **Spencer, D.** (2021). Bayesian tensor response regression wi
 
 **Spencer, D.**, Guhaniyogi, R., & Prado, R. (2020). Joint Bayesian estimation of voxel activation and inter-regional connectivity in fMRI experiments. Psychometrika, 85(4), 845-869.
 
-# Works in Progress
+**Spencer, D.**, Bolin, D., Nebel, M. B., & Mejia, A. Fast Bayesian estimation of brain activation with cortical surface and subcortical fMRI data using EM. arXiv preprint arXiv:2203.00053. In preparation.
 
-**Spencer, D.**, Bolin, D., Nebel, M. B., & Mejia, A. Fast Bayesian estimation of brain activation with cortical surface and subcortical fMRI data using EM. arXiv preprint arXiv:2203.00053.
+**Spencer, D.**, Guhaniyogi, R., Shinohara, R., & Prado, R. Bayesian tensor regression using the Tucker decomposition for sparse spatial modeling. arXiv preprint arXiv:2203.04733. In preparation.
 
-**Spencer, D**, Shinohara, R., Guhaniyogi, R., Prado, R. Parsimonious Bayesian sparse tensor regression using the Tucker decomposition. arXiv preprint arXiv:2203.04733
+Parlak, F., Pham, D., **Spencer, D.**, Welsh, R., & Mejia, A. Sources of Residual Autocorrelation in Multiband Task fMRI and Strategies for Effective Mitigation. arXiv preprint arXiv:2209.06783. In preparation.
+
+Shadmon, R., **Spencer, D.**, & Arden, O. Proximal Consensus: Responsive data pipelines with approximate fault detection. Available upon request. In preparation.
 
 # Awards and Honors
 
@@ -77,7 +79,17 @@ UC Santa Cruz, Santa Cruz, CA, April 2016
 
 **Organizer** - Statistics in Imaging Working Group. A monthly meeting to present and share work and connect with others in the statistical imaging community.
 
-# Professional Experience
+# Employment History
+
+**Indiana University Bloomington**
+
+*Postdoctoral Researcher* - 2020 - present
+
+**UC Santa Cruz**
+
+*Instructor* - 2016, 2018, 2019
+
+*Teaching Assistant* - 2015 - 2020
 
 **JP Morgan Chase & Co.**
 
