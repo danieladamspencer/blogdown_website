@@ -141,7 +141,7 @@ UC Santa Cruz, Santa Cruz, CA, April 2016
 
 *Instructor* - Fall 2018, Fall 2019
 
-Introduces students to data visualization and statistical programming techniques using the R language. Covers the basics of the language, descriptive statistics, visual analytics, and applied linear regression.
+Introduces graduate students to data visualization and statistical programming techniques using the R language. Covers the basics of the language, descriptive statistics, visual analytics, and applied linear regression.
 
 **STAT 200: Elementary Statistics** – Penn State University 
 
