@@ -39,9 +39,9 @@ Guhaniyogi, R., & **Spencer, D.** (2021). Bayesian tensor response regression wi
 
 **Spencer, D.**, Guhaniyogi, R., Shinohara, R., & Prado, R. Bayesian tensor regression using the Tucker decomposition for sparse spatial modeling. arXiv preprint arXiv:2203.04733. In preparation.
 
-Parlak, F., Pham, D., **Spencer, D.**, Welsh, R., & Mejia, A. Sources of Residual Autocorrelation in Multiband Task fMRI and Strategies for Effective Mitigation. arXiv preprint arXiv:2209.06783. In preparation.
+Parlak, F., Pham, D., **Spencer, D.**, Welsh, R., & Mejia, A. Sources of Residual Autocorrelation in Multiband Task fMRI and Strategies for Effective Mitigation. arXiv preprint arXiv:2209.06783. Submitted to *Frontiers in Neuroscience*.
 
-Shadmon, R., **Spencer, D.**, & Arden, O. Proximal Consensus: Responsive data pipelines with approximate fault detection. Available upon request. In preparation.
+Shadmon, R., **Spencer, D.**, & Arden, O. Proximal Consensus: Responsive data pipelines with approximate fault detection. Available upon request. Submitted to *IEEE Computer Security Foundations Symposium*.
 
 # Awards and Honors
 
@@ -78,6 +78,14 @@ UC Santa Cruz, Santa Cruz, CA, April 2016
 # Service
 
 **Organizer** - Statistics in Imaging Working Group. A monthly meeting to present and share work and connect with others in the statistical imaging community.
+
+**Reviewer** - Reviewer in several journals for articles on tensor regressions, Bayesian methods, and software for the following publications:
+  - Annals of Applied Statistics
+  - Biostatistics
+  - Computational Statistics and Data Analysis
+  - NeuroImage
+  - Psychometrika
+  - RJournal
 
 # Employment History
 
