@@ -37,7 +37,7 @@ Guhaniyogi, R., & **Spencer, D.** (2021). Bayesian tensor response regression wi
 
 **Spencer, D.**, Bolin, D., Nebel, M. B., & Mejia, A. Fast Bayesian estimation of brain activation with cortical surface and subcortical fMRI data using EM. arXiv preprint arXiv:2203.00053. In preparation.
 
-**Spencer, D.**, Guhaniyogi, R., Shinohara, R., & Prado, R. Bayesian tensor regression using the Tucker decomposition for sparse spatial modeling. arXiv preprint arXiv:2203.04733. In preparation.
+**Spencer, D.**, Guhaniyogi, R., Shinohara, R., & Prado, R. Bayesian scalar-on-tensor regression using the Tucker decomposition for sparse spatial modeling finds promising results analyzing neuroimaging data. arXiv preprint arXiv:2203.04733. Submitted to *Biostatistics*.
 
 Parlak, F., Pham, D., **Spencer, D.**, Welsh, R., & Mejia, A. Sources of Residual Autocorrelation in Multiband Task fMRI and Strategies for Effective Mitigation. arXiv preprint arXiv:2209.06783. Submitted to *Frontiers in Neuroscience*.
 
