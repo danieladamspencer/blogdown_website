@@ -29,19 +29,19 @@ Degree earned August 2009
 
 # Publications
 
-**Spencer, D.**, Yue, Y. R., Bolin, D., Ryan, S., & Mejia, A. F. (2022). Spatial Bayesian GLM on the cortical surface produces reliable task activations in individuals and groups. NeuroImage, 118908.
+**Spencer, D.**, Yue, Y. R., Bolin, D., Ryan, S., & Mejia, A. F. (2022). Spatial Bayesian GLM on the cortical surface produces reliable task activations in individuals and groups. *NeuroImage*, 118908.
 
-Guhaniyogi, R., & **Spencer, D.** (2021). Bayesian tensor response regression with an application to brain activation studies. Bayesian Analysis, 16(4), 1221-1249.
+Guhaniyogi, R., & **Spencer, D.** (2021). Bayesian tensor response regression with an application to brain activation studies. *Bayesian Analysis*, 16(4), 1221-1249.
 
-**Spencer, D.**, Guhaniyogi, R., & Prado, R. (2020). Joint Bayesian estimation of voxel activation and inter-regional connectivity in fMRI experiments. Psychometrika, 85(4), 845-869.
+**Spencer, D.**, Guhaniyogi, R., & Prado, R. (2020). Joint Bayesian estimation of voxel activation and inter-regional connectivity in fMRI experiments. *Psychometrika*, 85(4), 845-869.
 
-**Spencer, D.**, Bolin, D., Nebel, M. B., & Mejia, A. Fast Bayesian estimation of brain activation with cortical surface and subcortical fMRI data using EM. arXiv preprint arXiv:2203.00053. In preparation.
+**Spencer, D.**, Bolin, D., & Mejia, A. Fast Bayesian estimation of brain activation with cortical surface and subcortical fMRI data using EM. arXiv preprint arXiv:2203.00053. Under review at *Computational Statistics and Data Analysis*.
 
-**Spencer, D.**, Guhaniyogi, R., Shinohara, R., & Prado, R. Bayesian scalar-on-tensor regression using the Tucker decomposition for sparse spatial modeling finds promising results analyzing neuroimaging data. arXiv preprint arXiv:2203.04733. Submitted to *Biostatistics*.
+**Spencer, D.**, Guhaniyogi, R., Shinohara, R., & Prado, R. Bayesian scalar-on-tensor regression using the Tucker decomposition for sparse spatial modeling finds promising results analyzing neuroimaging data. arXiv preprint arXiv:2203.04733. Under review at *Biostatistics*.
 
-Parlak, F., Pham, D., **Spencer, D.**, Welsh, R., & Mejia, A. Sources of Residual Autocorrelation in Multiband Task fMRI and Strategies for Effective Mitigation. arXiv preprint arXiv:2209.06783. Submitted to *Frontiers in Neuroscience*.
+Parlak, F., Pham, D., **Spencer, D.**, Welsh, R., & Mejia, A. Sources of Residual Autocorrelation in Multiband Task fMRI and Strategies for Effective Mitigation. arXiv preprint arXiv:2209.06783. Under review at *Frontiers in Neuroscience*.
 
-Shadmon, R., **Spencer, D.**, & Arden, O. Proximal Consensus: Responsive data pipelines with approximate fault detection. Available upon request. Submitted to *IEEE Computer Security Foundations Symposium*.
+Shadmon, R., **Spencer, D.**, & Arden, O. Proximal Consensus: Responsive data pipelines with approximate fault detection. Available upon request. Under review for *IEEE Symposium on Security and Privacy*.
 
 # Awards and Honors
 
